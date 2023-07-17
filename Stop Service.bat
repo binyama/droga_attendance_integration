@@ -1,0 +1,1 @@
+nssm stop droga_attendance_import

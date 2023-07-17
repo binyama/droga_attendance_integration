@@ -1,0 +1,1 @@
+nssm start droga_attendance_import

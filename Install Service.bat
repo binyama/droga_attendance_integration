@@ -1,0 +1,2 @@
+nssm remove droga_attendance_import confirm
+nssm install droga_attendance_import
