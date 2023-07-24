@@ -22,7 +22,7 @@ attendance_password = config_file['attendance']['attendance_password']
 attendance_db = config_file['attendance']['attendance_db']
 attendance_port = config_file['attendance']['attendance_port']
 
-service_run_time=config_file['background']['service_run_time']
+service_run_time=int(config_file['background']['service_run_time'])
 
 common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(odoo_url))
 models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(odoo_url))
