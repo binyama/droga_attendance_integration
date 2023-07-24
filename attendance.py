@@ -1,21 +1,20 @@
-import xmlrpc.client
-import helper
 from datetime import datetime
 import psycopg2
 import psycopg2.extras
-import time
+import helper
+
 
 def import_attendance():
     try:
 
-        today = datetime.utcnow().strftime("%Y-%m-%d")
-        today = '2023-05-31'
+        today = datetime.utcnow().strftime("%Y-%m-%d H%:M%:S%")
+        today = '2023-07-08'
         cursor = helper.conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
         cursor.execute(
             "select ap.id,pe.id,pe.emp_code,pe.first_name ,pe.last_name,ap.att_date ,ap.week ,ap.weekday ,ap.clock_in ,ap.in_date ,ap.in_time ,"
             "ap.clock_out,ap.out_date ,ap.out_time ,ap.workday from personnel_employee pe inner join att_payloadparing ap on pe.id=ap.emp_id "
-            "where ap.att_date ='" + today + "'")
+            "where ap.att_date >='" + today + "'")
 
         records = cursor.fetchall()
 

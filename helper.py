@@ -1,6 +1,6 @@
 import configparser
 import xmlrpc.client
-from datetime import datetime
+
 import psycopg2
 
 # CREATE OBJECT
